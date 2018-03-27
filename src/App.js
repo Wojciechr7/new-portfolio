@@ -16,8 +16,8 @@ class App extends Component {
         this.scroll = new Scroll(0);
 
 
-/*        setTimeout(() =>
-        this.scroll.scrollDown());*/
+        setTimeout(() =>
+        this.scroll.scrollDown());
 
     }
 
@@ -26,9 +26,10 @@ class App extends Component {
             <div className="App">
                 <Welcome scroll={this.scroll}/>
                 <Menu/>
+                <Projects/>
                 <AboutMe/>
                 <Technologies/>
-                <Projects/>
+
             </div>
         );
     }

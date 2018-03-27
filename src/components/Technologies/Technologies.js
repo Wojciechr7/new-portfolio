@@ -12,7 +12,7 @@ class Technologies extends Component {
         }*/
     render() {
         return (
-            <div className={styles.technologiesContainer}>
+            <section className={styles.technologiesContainer}>
                 <div className={styles.techImages}>
                     <div className={styles.techImagesRow}>
                         <div className={styles.imageItem}>
@@ -47,7 +47,7 @@ class Technologies extends Component {
                         <li>C#</li>
                     </ul>
                 </div>
-            </div>
+            </section>
         );
     }
 

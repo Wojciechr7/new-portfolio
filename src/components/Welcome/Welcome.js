@@ -13,14 +13,14 @@ class Welcome extends Component {
     }
     render() {
         return (
-            <div id='welcome'>
+            <section id='welcome'>
                 <div className={styles.welcome}>
                     <div className={styles.welcomeMsg}>
                         <p></p>
                     </div>
                     <div onClick={this.handleScroll} className={styles.arrow}>></div>
                 </div>
-            </div>
+            </section>
         );
     }
 

@@ -12,7 +12,7 @@ class AboutMe extends Component {
     }*/
     render() {
         return (
-            <div className={styles.aboutMeContainer}>
+            <section className={styles.aboutMeContainer}>
                 <div className={styles.contentBox}>
                     <img className={styles.portfolioImage} src={portfolio10} alt=""/>
                     <div className={styles.content}>
@@ -20,7 +20,7 @@ class AboutMe extends Component {
                     </div>
                 </div>
 
-            </div>
+            </section>
         );
     }
 

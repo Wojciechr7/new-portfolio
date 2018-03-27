@@ -5,51 +5,42 @@
   height: 100vh;
   background-color: white;
   justify-content: center;
-}
 
-.portfolioImage {
-  object-fit: contain;
-  align-self: flex-end;
-}
-
-.contentBox {
-  display: flex;
-  position: relative;
-  height: 80%;
-  width: 50%;
-  align-self: flex-end;
-
-}
-
-.content {
-  width: 60%;
-  height: 50%;
-  position: relative;
-  align-self: flex-end;
-  margin-bottom: 300px;
-  font-family: "Open Sans";
-  font-size: 30px;
-  text-align: center;
-}
-
-@media (max-width: 1000px) {
   .contentBox {
-    width: 70%;
-  }
+    display: flex;
+    position: relative;
+    height: 80%;
+    width: 50%;
+    align-self: flex-end;
 
-  .content {
-    font-size: 25px;
-  }
-}
+    @media (max-width: 1000px) {
+      width: 70%;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+    }
 
-@media (max-width: 600px) {
-  .contentBox {
-    width: 100%;
-  }
+    .portfolioImage {
+      object-fit: contain;
+      align-self: flex-end;
+    }
 
-}
-@media (max-width: 400px) {
-  .content {
-    font-size: 20px;
+    .content {
+      width: 60%;
+      height: 50%;
+      position: relative;
+      align-self: flex-end;
+      margin-bottom: 300px;
+      font-family: "Open Sans";
+      font-size: 30px;
+      text-align: center;
+
+      @media (max-width: 1000px) {
+        font-size: 25px;
+      }
+      @media (max-width: 400px) {
+        font-size: 20px;
+      }
+    }
   }
 }

@@ -6,44 +6,56 @@
   background-color: black;
   color: white;
   font-family: "Open Sans";
-  display : flex;
+  display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-}
 
-.welcomeMsg {
-  font-size: 3em;
-}
-@media (max-width: 1000px) {
   .welcomeMsg {
-    font-size: 2em;
+    font-size: 3em;
+
+    @media (max-width: 1000px) {
+      font-size: 2em;
+
+    }
+    @media (max-width: 600px) {
+      font-size: 1em;
+    }
+
+    p {
+      overflow: hidden;
+      border-right: .15em solid transparent;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .15em;
+      animation: typing 16s steps(40, end) infinite,
+      blink-caret .75s step-end infinite
+    }
+
+    p:after {
+      content: '';
+      display: block;
+      animation: change-letter 16s linear infinite;
+    }
+  }
+
+  .arrow {
+    position: absolute;
+    left: 50%;
+    bottom: 10%;
+    font-size: 80px;
+    font-weight: bold;
+    transform: rotate(90deg);
+    cursor: pointer;
+    color: gray;
+    transition: all 1s;
+    animation: bounce-arrow .5s alternate infinite;
+  }
+
+  .arrow:hover {
+    color: white;
   }
 }
-@media (max-width: 600px) {
-  .welcomeMsg {
-    font-size: 1em;
-  }
-}
-
-.welcomeMsg p {
-  overflow: hidden;
-  border-right: .15em solid transparent;
-  white-space: nowrap;
-  margin: 0 auto;
-  letter-spacing: .15em;
-  animation:
-          typing 16s steps(40, end) infinite,
-          blink-caret .75s step-end infinite
-}
-
-
-.welcomeMsg p:after {
-  content: '';
-  display: block;
-  animation: change-letter 16s linear infinite;
-}
-
 
 @keyframes change-letter {
   0% {
@@ -57,35 +69,34 @@
   }
 }
 
-
 @keyframes typing {
-  0% { width: 0 }
-  7% { width: 100% }
-  25% { width: 100% }
-  25.00001% { width: 0 }
-  33% { width: 100% }
-  100% { width: 100% }
+  0% {
+    width: 0
+  }
+  7% {
+    width: 100%
+  }
+  25% {
+    width: 100%
+  }
+  25.00001% {
+    width: 0
+  }
+  33% {
+    width: 100%
+  }
+  100% {
+    width: 100%
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
-}
-
-.arrow {
-  position: absolute;
-  left: 50%;
-  bottom: 10%;
-  font-size: 80px;
-  font-weight: bold;
-  transform: rotate(90deg);
-  cursor: pointer;
-  color: gray;
-  transition: all 1s;
-  animation: bounce-arrow .5s alternate infinite;
-}
-.arrow:hover {
-  color: white;
+  from, to {
+    border-color: transparent
+  }
+  50% {
+    border-color: white;
+  }
 }
 
 @keyframes bounce-arrow {

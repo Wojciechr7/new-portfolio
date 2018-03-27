@@ -9,9 +9,9 @@ class Projects extends Component {
     }*/
     render() {
         return (
-            <div className={styles.projectsContainer}>
-
-            </div>
+            <section className={styles.projectsContainer}>
+                <header className={styles.title}>Projects</header>
+            </section>
         );
     }
 

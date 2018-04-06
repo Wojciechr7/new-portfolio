@@ -13,23 +13,25 @@ export class Scroll {
         this.menu = new Menu(false);
     }
 
-    scrollDown() {
-        if (!this.locked) {
+    scrollDown(t) {
+        if (!this.locked && t.clientHeight + t.scrollTop === t.scrollHeight) {
             if (this.actualComponent < 4) {
                 ++this.actualComponent;
             }
             this.locked = true;
             $('html, body').stop().animate({
                 scrollTop: this.actualComponent * $('#welcome').innerHeight()
-            }, () => {
-                this.locked = false;
+            }, 300, () => {
                 this.menu.toggleMenu(this.actualComponent);
+                this.locked = false;
+                $(t).scrollTop(0);
+
             });
         }
     }
 
-    scrollUp() {
-        if (!this.locked) {
+    scrollUp(t) {
+        if (!this.locked && t.scrollTop === 0) {
             if (this.actualComponent > 0) {
                 --this.actualComponent;
             }
@@ -37,10 +39,23 @@ export class Scroll {
             this.menu.toggleMenu(this.actualComponent);
             $('html, body').stop().animate({
                 scrollTop: this.actualComponent * $('#welcome').innerHeight()
-            }, () => {
+            }, 300, () => {
                 this.locked = false;
+                $(t).scrollTop(0);
             });
         }
+    }
+    scrollOnce() {
+        if (this.actualComponent < 4) {
+            ++this.actualComponent;
+        }
+        this.locked = true;
+        $('html, body').stop().animate({
+            scrollTop: this.actualComponent * $('#welcome').innerHeight()
+        }, 300, () => {
+            this.locked = false;
+            this.menu.toggleMenu(this.actualComponent);
+        });
     }
 
 }

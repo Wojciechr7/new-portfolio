@@ -5,6 +5,7 @@ import {Scroll} from "./classes/Scroll";
 import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
+import * as $ from "jquery";
 
 
 class App extends Component {
@@ -16,8 +17,8 @@ class App extends Component {
         this.scroll = new Scroll(0);
 
 
-        setTimeout(() =>
-        this.scroll.scrollDown());
+                setTimeout(() =>
+                    this.scroll.scrollOnce());
 
     }
 
@@ -33,6 +34,7 @@ class App extends Component {
             </div>
         );
     }
+
     componentDidMount() {
         window.addEventListener('wheel', this.handleScroll);
     };
@@ -43,10 +45,12 @@ class App extends Component {
 
 
     handleScroll = event => {
+        console.log($(event.path[1])[0].id);
         if (event.deltaY > 0) {
-            this.scroll.scrollDown();
+            this.scroll.scrollDown(event.path[1]);
+
         } else {
-            this.scroll.scrollUp();
+            this.scroll.scrollUp(event.path[1]);
         }
     };
 }

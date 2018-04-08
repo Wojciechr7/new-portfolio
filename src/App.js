@@ -5,22 +5,17 @@ import {Scroll} from "./classes/Scroll";
 import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
-import * as $ from 'jquery';
+//import * as $ from 'jquery';
 
 
 class App extends Component {
 
     scroll;
 
-    constructor(props) {
+    /*constructor(props) {
         super(props);
-        this.scroll = new Scroll(0);
 
-
-                setTimeout(() =>
-                    this.scroll.scrollOnce());
-
-    }
+    }*/
 
     render() {
         return (
@@ -37,6 +32,10 @@ class App extends Component {
 
     componentDidMount() {
         window.addEventListener('wheel', this.handleScroll);
+        this.scroll = new Scroll(0);
+
+      /*  setTimeout(() =>
+            this.scroll.scrollOnce());*/
     };
 
     componentWillUnmount() {
@@ -46,9 +45,9 @@ class App extends Component {
 
     handleScroll = event => {
         if (event.deltaY > 0) {
-            this.scroll.scrollDown(event);
+            this.scroll.scrollDown();
         } else {
-            this.scroll.scrollUp(event);
+            this.scroll.scrollUp();
         }
     };
 }

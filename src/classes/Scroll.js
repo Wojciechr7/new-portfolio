@@ -1,43 +1,53 @@
 import * as $ from 'jquery';
 import {Menu} from "./Menu";
+import {ProjectsAnimation} from "./ProjectsAnimation";
 
 export class Scroll {
 
     actualComponent;
     locked;
     menu;
+    animations;
+    t;
+    projectsCount;
 
     constructor(ac) {
         this.actualComponent = ac;
         this.locked = false;
         this.menu = new Menu(false);
+        this.t = $('#projects-container');
+        this.projectsCount = this.t.children().find('div').length/2;
+
+        setTimeout(()=> {
+            this.animations = new ProjectsAnimation(this.t[0].scrollHeight, this.t[0].clientHeight, this.projectsCount)});
     }
 
-    scrollDown(e) {
-        let t = $('#projects-container');
-        /*        console.log($('#projects-container'));
-                console.log(t[0].clientHeight, t.scrollTop(), t[0].scrollHeight);*/
-
+    scrollDown() {
         let scroll = () => {
             if (!this.locked) {
                 if (this.actualComponent < 4) {
                     ++this.actualComponent;
                 }
-                console.log(this.actualComponent);
                 this.locked = true;
                 $('html, body').stop().animate({
                     scrollTop: this.actualComponent * $('#welcome').innerHeight()
                 }, 300, () => {
-                    this.menu.toggleMenu(this.actualComponent);
                     this.locked = false;
                     //$(t).scrollTop(0);
+                    if (this.actualComponent === 2) {
+                        $('#portfolio-img').css('opacity','1');
+                    } else {
+                        $('#portfolio-img').css('opacity','0');
+                    }
+                    this.menu.toggleMenu(this.actualComponent);
 
                 });
             }
         };
 
-        if ($(e.target).parents().is('#projects-container')) {
-            if (!this.locked && t[0].clientHeight + t.scrollTop() === t[0].scrollHeight) {
+        if (this.actualComponent === 1) {
+            this.animations.animate(this.t.scrollTop());
+            if (!this.locked && this.t[0].clientHeight + this.t.scrollTop() === this.t[0].scrollHeight) {
                 scroll();
             }
         } else {
@@ -46,14 +56,12 @@ export class Scroll {
 
     }
 
-    scrollUp(e) {
-        let t = $('#projects-container');
+    scrollUp() {
         let scroll = () => {
             if (!this.locked) {
                 if (this.actualComponent > 0) {
                     --this.actualComponent;
                 }
-                console.log(this.actualComponent);
                 this.locked = true;
                 this.menu.toggleMenu(this.actualComponent);
                 $('html, body').stop().animate({
@@ -61,13 +69,18 @@ export class Scroll {
                 }, 300, () => {
                     this.locked = false;
                     //$(t).scrollTop(0);
+                    if (this.actualComponent === 2) {
+                        $('#portfolio-img').css('opacity','1');
+                    } else {
+                        $('#portfolio-img').css('opacity','0');
+                    }
                 });
             }
 
         };
-        if ($(e.target).parents().is('#projects-container') && t.scrollTop() === 0) {
+        if (this.actualComponent === 1 && this.t.scrollTop() === 0) {
             scroll();
-        } else if (!$(e.target).parents().is('#projects-container')) {
+        } else if (this.actualComponent !== 1) {
             scroll();
         }
 

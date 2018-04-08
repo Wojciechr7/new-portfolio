@@ -17,6 +17,7 @@ export class Menu {
             $('#main-menu').animate({
                 height: 'toggle'
             });
+
         }
 
     }

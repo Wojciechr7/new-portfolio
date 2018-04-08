@@ -1,18 +1,35 @@
 .projectsContainer {
-  height: 100vh;
   overflow-y: scroll;
   margin-right: -100px;
   padding-right: 100px;
+  height: 100vh;
 
   .title {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    margin-top: 150px;
+    margin-top: 10vh;
   }
   .content {
-    width: 80%;
-    height: 100%;
-    background-color: gold;
+    width: 100vw;
+
+    div {
+      width: 1000px;
+      height: 300px;
+      background-color: #f1f1f1;
+      margin: 30px auto;
+      display: block;
+
+      div {
+        width: 500px;
+        height: 300px;
+        background-color: #f1f1f1;
+        margin: 0;
+
+        img {
+
+        }
+      }
+    }
   }
 }

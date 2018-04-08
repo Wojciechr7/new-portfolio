@@ -25,7 +25,7 @@ class Welcome extends Component {
     }
 
     handleScroll = () => {
-        this.scroll.scrollDown();
+        this.scroll.scrollOnce();
     }
 
 }

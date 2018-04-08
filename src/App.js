@@ -5,7 +5,7 @@ import {Scroll} from "./classes/Scroll";
 import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
-import * as $ from "jquery";
+import * as $ from 'jquery';
 
 
 class App extends Component {
@@ -45,12 +45,10 @@ class App extends Component {
 
 
     handleScroll = event => {
-        console.log($(event.path[1])[0].id);
         if (event.deltaY > 0) {
-            this.scroll.scrollDown(event.path[1]);
-
+            this.scroll.scrollDown(event);
         } else {
-            this.scroll.scrollUp(event.path[1]);
+            this.scroll.scrollUp(event);
         }
     };
 }

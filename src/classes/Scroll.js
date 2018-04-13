@@ -10,8 +10,10 @@ export class Scroll {
     animations;
     t;
     projectsCount;
+    toggle;
 
-    constructor(ac) {
+    constructor(ac,tgl) {
+        this.toggle = tgl;
         this.actualComponent = ac;
         this.locked = false;
         this.menu = new Menu(false);
@@ -33,12 +35,8 @@ export class Scroll {
                     scrollTop: this.actualComponent * $('#welcome').innerHeight()
                 }, 300, () => {
                     this.locked = false;
-                    //$(t).scrollTop(0);
-                    if (this.actualComponent === 2) {
-                        $('#portfolio-img').css('opacity','1');
-                    } else {
-                        $('#portfolio-img').css('opacity','0');
-                    }
+                    this.togglePortfolioImage(this.actualComponent);
+
                     this.menu.toggleMenu(this.actualComponent);
 
                 });
@@ -49,9 +47,11 @@ export class Scroll {
             this.animations.animate(this.t.scrollTop());
             if (!this.locked && this.t[0].clientHeight + this.t.scrollTop() === this.t[0].scrollHeight) {
                 scroll();
+                this.hideMenu();
             }
         } else {
             scroll();
+            this.hideMenu();
         }
 
     }
@@ -68,20 +68,17 @@ export class Scroll {
                     scrollTop: this.actualComponent * $('#welcome').innerHeight()
                 }, 300, () => {
                     this.locked = false;
-                    //$(t).scrollTop(0);
-                    if (this.actualComponent === 2) {
-                        $('#portfolio-img').css('opacity','1');
-                    } else {
-                        $('#portfolio-img').css('opacity','0');
-                    }
+
+                    this.togglePortfolioImage(this.actualComponent);
                 });
             }
-
         };
         if (this.actualComponent === 1 && this.t.scrollTop() === 0) {
             scroll();
+            this.hideMenu();
         } else if (this.actualComponent !== 1) {
             scroll();
+            this.hideMenu();
         }
 
 
@@ -98,6 +95,18 @@ export class Scroll {
             this.locked = false;
             this.menu.toggleMenu(this.actualComponent);
         });
+    }
+
+    hideMenu() {
+        $("#nav").addClass(this.toggle);
+    };
+
+    togglePortfolioImage(nr) {
+        if (nr === 2) {
+            $('#portfolio-img').css('opacity','1');
+        } else {
+            $('#portfolio-img').css('opacity','0');
+        }
     }
 
 }

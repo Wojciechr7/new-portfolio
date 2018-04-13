@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styles from './style.scss';
+import bs from 'bootstrap/scss/bootstrap.scss';
 import checkers from '../../img/devices/checkers-device.png';
 import school from '../../img/devices/school-device.png';
 import tictactoe from '../../img/devices/tictactoe-device.png';
@@ -26,6 +27,8 @@ class Projects extends Component {
                             <h2>Checkers game</h2>
                             <p>Multiplayer online checkers game with realtime chat.</p>
                             <p>Stack: Angular, Typescript, NodeJS, Firebase, websockets</p>
+                            <button className={[bs["btn"], bs["btn-sm"], "animated-button", "victoria-one"].join(' ')}>test button</button>
+
                         </article>
                     </div>
                     <div>
@@ -64,7 +67,7 @@ class Projects extends Component {
                         </div>
                         <article>
                             <h2>ESP8266 - my hobby</h2>
-                            <p>Control led lights wireless by click on website. Using websockets, it works very fast.</p>
+                            <p>Control led lights wireless by click on website. Cool things :)</p>
                             <p>Stack: NodeJS, JQuery, Arduino C, websockets, RESTFul API, mongooDB</p>
                         </article>
                     </div>

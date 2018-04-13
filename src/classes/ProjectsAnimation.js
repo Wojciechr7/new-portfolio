@@ -9,7 +9,6 @@ export class ProjectsAnimation {
     constructor(full, screen, projectsCount) {
         this.range = full - screen;
         this.divide = this.range / projectsCount;
-        //console.log(this.divide);
 
         this.contentSize = $(window)[0].innerHeight;
 
@@ -23,7 +22,6 @@ export class ProjectsAnimation {
                 break;
             }
         }
-
     }
 
 

@@ -5,11 +5,13 @@ import styles from './style.scss';
 
 class Welcome extends Component {
 
+    //scroll;
     scroll;
 
     constructor(props) {
         super(props);
         this.scroll = props.scroll;
+
     }
     render() {
         return (
@@ -25,7 +27,7 @@ class Welcome extends Component {
     }
 
     handleScroll = () => {
-        this.scroll.scrollOnce();
+        this.scroll().scrollDown();
     }
 
 }

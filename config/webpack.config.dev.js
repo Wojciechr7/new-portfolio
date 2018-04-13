@@ -174,7 +174,7 @@ module.exports = {
                             name: 'static/media/[name].[hash:8].[ext]',
                         },
                     },
-                    {
+                    /*{
                         test: /\.css$/,
                         use: ExtractTextPlugin.extract({
                             fallback: 'style-loader',
@@ -189,9 +189,9 @@ module.exports = {
                                 'postcss-loader'
                             ]
                         })
-                    },
+                    },*/
                     {
-                        test: /\.scss$/,
+                        test: /\.s?css$/,
                         use: ExtractTextPlugin.extract({
                             fallback: 'style-loader',
                             use: [

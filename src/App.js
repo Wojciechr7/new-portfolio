@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Menu from './components/Menu/Menu';
 import Welcome from './components/Welcome/Welcome';
-import {Scroll} from "./classes/Scroll";
 import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
@@ -20,8 +19,8 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Welcome scroll={this.scroll}/>
-                <Menu/>
+                <Welcome scroll={this.getScroll}/>
+                <Menu ref={scr => { this.scr = scr }}/>
                 <Projects/>
                 <AboutMe/>
                 <Technologies/>
@@ -32,10 +31,10 @@ class App extends Component {
 
     componentDidMount() {
         window.addEventListener('wheel', this.handleScroll);
-        this.scroll = new Scroll(0);
+        this.scroll = this.scr.scroll;
 
-      /*  setTimeout(() =>
-            this.scroll.scrollOnce());*/
+        setTimeout(() =>
+            this.scroll.scrollOnce());
     };
 
     componentWillUnmount() {
@@ -50,6 +49,11 @@ class App extends Component {
             this.scroll.scrollUp();
         }
     };
+
+    getScroll = () => {
+        return this.scroll;
+    };
+
 }
 
 export default App;

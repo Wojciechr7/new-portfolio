@@ -38,7 +38,16 @@ $radius: 15em;
     font-size: 1.5em;
     top: 1em;
     right: 1em;
+    cursor: pointer;
+    transition: all .5s;
+
   }
+
+  .link:hover::before {
+    color: black;
+  }
+
+
 }
 .wrapCircles.closed{
   .circle {
@@ -99,7 +108,7 @@ $radius: 15em;
   z-index: 2;
   .link::before {
     transform: rotate((90deg/5) * -1);
-    content: '\f0f3';
+    content: '\f2bd';
     @extend .fa;
 
   }
@@ -111,7 +120,7 @@ $radius: 15em;
   z-index: 3;
   .link::before {
     transform: rotate((90deg/5) * -2);
-    content: '\f013';
+    content: '\f19d';
     @extend .fa;
   }
 }
@@ -122,7 +131,7 @@ $radius: 15em;
   z-index: 4;
   .link::before {
     transform: rotate((90deg/5) * -3);
-    content: '\f1cb';
+    content: '\f108';
     @extend .fa;
   }
 }
@@ -133,7 +142,7 @@ $radius: 15em;
   z-index: 5;
   .link::before {
     transform: rotate((90deg/5) * -4);
-    content: '\f099';
+    content: '\f095';
     @extend .fa;
   }
 }

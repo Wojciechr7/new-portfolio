@@ -16,11 +16,11 @@ class Projects extends Component {
                 <div className={styles.content}>
                     { MyProjects.getProjects().map(p =>
                         <div key={p.id.toString()}>
-                            <div>
+                            <div className={[bs["card"], bs["bg-light"]].join(' ')}>
                                 <img src={p.img} alt=""/>
                             </div>
-                            <article>
-                                <h2>{p.name}</h2>
+                            <article className={[bs["card"], bs["bg-dark"], bs["text-white"]].join(' ')}>
+                                <h2 className={bs["card-header"]}>{p.name}</h2>
                                 <p>{p.description}</p>
                                 <p>Stack: {p.stack}</p>
                                 <div className={styles.buttonsContainer}>

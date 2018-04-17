@@ -15,10 +15,10 @@ export class ProjectsAnimation {
     }
 
     animate(scrolled) {
-        $(`#projects-container div div div img`).css('left','0');
+        $(`#projects-container div div div img`).css('margin','auto auto auto 3%');
         for (let i = 4; i >= 0; i--) {
             if (i * 300 - (this.contentSize - 335) < scrolled) {
-                $(`#projects-container div div:nth-child(${i+1}) div img`).css('left','25px');
+                $(`#projects-container div div:nth-child(${i+1}) div img`).css('margin','auto auto auto 10%');
                 break;
             }
         }

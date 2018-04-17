@@ -1,7 +1,7 @@
 /* Global Button Styles */
 .animatedButton {
   z-index: 1;
-  width: 70%;
+  width: 50%;
   background-color: #353535;
 }
 .animatedButton:link, .animatedButton:visited {
@@ -48,7 +48,7 @@
   position: relative;
   display: block;
   margin: 5px auto 0;
-  padding: 14px 15px;
+  padding: 5px 15px;
   color: #fff;
   font-size:14px;
   border-radius: 0;

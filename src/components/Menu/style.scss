@@ -102,7 +102,7 @@ $radius: 15em;
   }
 }
 .c1 {
-  background: #43A047;
+  background: #292929;
   transition-delay: 0.1s, 0.1s, 0.1s;
   transform: rotate((90deg/5) * 1);
   z-index: 2;
@@ -114,7 +114,7 @@ $radius: 15em;
   }
 }
 .c2 {
-  background: #388E3C;
+  background: #3f3f3f;
   transition-delay: 0.2s, 0.2s, 0.2s;
   transform: rotate((90deg/5) * 2);
   z-index: 3;
@@ -126,7 +126,7 @@ $radius: 15em;
 }
 .c3 {
   transition-delay: 0.3s,0.3s, 0.3s;
-  background: #2E7D32;
+  background: #555555;
   transform: rotate((90deg/5) * 3);
   z-index: 4;
   .link::before {
@@ -137,7 +137,7 @@ $radius: 15em;
 }
 .c4 {
   transition-delay: 0.4s, 0.4s, 0.4s;
-  background: #1B5E20;
+  background: #6b6b6b;
   transform: rotate((90deg/5) * 4);
   z-index: 5;
   .link::before {
@@ -147,7 +147,7 @@ $radius: 15em;
   }
 }
 .c5 {
-  background: #4CAF50;
+  background: #000000;
   z-index: 1;
 }
 * {

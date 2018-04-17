@@ -4,6 +4,7 @@ import git from '../../img/git.png';
 import lin from '../../img/Linux-icon.png';
 import web from '../../img/ws.png';
 import win from '../../img/win.png';
+import bs from 'bootstrap/scss/bootstrap.scss';
 
 
 class Technologies extends Component {
@@ -13,39 +14,41 @@ class Technologies extends Component {
     render() {
         return (
             <section className={styles.technologiesContainer}>
-                <div className={styles.techImages}>
-                    <div className={styles.techImagesRow}>
-                        <div className={styles.imageItem}>
-                            <img width="100px" height="100px" src={lin} alt=""/>
-                            <p>Linux</p>
+                <header className={styles.title}>SKILLSET</header>
+                <div className={[styles.techDesc, bs["card"], bs["bg-light"]].join(' ')}>
+                    <div className={bs["card-header"]}>Familiar technologies</div>
+                    <div className={[bs["card-body"], styles.cardBody].join(' ')}>
+                        <div className={styles.imagesInterior}>
+                            <div className={styles.imageItem}>
+                                <img src={lin} alt=""/>
+                                <p>Linux</p>
+                            </div>
+                            <div className={styles.imageItem}>
+                                <img src={win} alt=""/>
+                                <p>Windows</p>
+                            </div>
+                            <div className={styles.imageItem}>
+                                <img src={git} alt=""/>
+                                <p>Github</p>
+                            </div>
+                            <div className={styles.imageItem}>
+                                <img src={web} alt=""/>
+                                <p>Webstorm</p>
+                            </div>
                         </div>
-                        <div className={styles.imageItem}>
-                            <img width="100px" height="100px" src={win} alt=""/>
-                            <p>Windows</p>
+                        <div className={styles.listInterior}>
+                            <ul className={bs["list-group"]}>
+                                <li className={bs["list-group-item"]}>HTML / CSS / SASS</li>
+                                <li className={bs["list-group-item"]}>JS / ES6 / TypeScript</li>
+                                <li className={bs["list-group-item"]}>Angular 2+</li>
+                                <li className={bs["list-group-item"]}>Bootstrap</li>
+                                <li className={bs["list-group-item"]}>JQuery</li>
+                                <li className={bs["list-group-item"]}>NODE.JS / NPM</li>
+                                <li className={bs["list-group-item"]}>OOP</li>
+                                <li className={bs["list-group-item"]}>C#</li>
+                            </ul>
                         </div>
                     </div>
-                    <div className={styles.techImagesRow}>
-                        <div className={styles.imageItem}>
-                            <img width="100px" height="100px" src={git} alt=""/>
-                            <p>Github</p>
-                        </div>
-                        <div className={styles.imageItem}>
-                            <img width="100px" height="100px" src={web} alt=""/>
-                            <p>Webstorm</p>
-                        </div>
-                    </div>
-                </div>
-                <div className={styles.techDesc}>
-                    <ul>
-                        <li>HTML / CSS / SASS</li>
-                        <li>JS / ES6 / TypeScript</li>
-                        <li>Angular 2+</li>
-                        <li>Bootstrap</li>
-                        <li>JQuery</li>
-                        <li>NODE.JS / NPM</li>
-                        <li>OOP</li>
-                        <li>C#</li>
-                    </ul>
                 </div>
             </section>
         );

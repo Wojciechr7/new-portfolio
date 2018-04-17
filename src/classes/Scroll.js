@@ -22,6 +22,8 @@ export class Scroll {
 
         setTimeout(()=> {
             this.animations = new ProjectsAnimation(this.t[0].scrollHeight, this.t[0].clientHeight, this.projectsCount)});
+
+        this.togglePortfolioImage(this.actualComponent);
     }
 
     scrollDown() {
@@ -43,7 +45,7 @@ export class Scroll {
             }
         };
 
-        if (this.actualComponent === 1) {
+        if (this.actualComponent === 3) {
             this.animations.animate(this.t.scrollTop());
             if (!this.locked && this.t[0].clientHeight + this.t.scrollTop() === this.t[0].scrollHeight) {
                 scroll();
@@ -73,10 +75,10 @@ export class Scroll {
                 });
             }
         };
-        if (this.actualComponent === 1 && this.t.scrollTop() === 0) {
+        if (this.actualComponent === 3 && this.t.scrollTop() === 0) {
             scroll();
             this.hideMenu();
-        } else if (this.actualComponent !== 1) {
+        } else if (this.actualComponent !== 3) {
             scroll();
             this.hideMenu();
         }
@@ -102,7 +104,7 @@ export class Scroll {
     };
 
     togglePortfolioImage(nr) {
-        if (nr === 2) {
+        if (nr === 1) {
             $('#portfolio-img').css('opacity','1');
         } else {
             $('#portfolio-img').css('opacity','0');

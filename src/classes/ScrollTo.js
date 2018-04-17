@@ -17,7 +17,7 @@ export class ScrollTo {
     }
 
     togglePortfolioImage(nr) {
-        if (nr === 2) {
+        if (nr === 1) {
             $('#portfolio-img').css('opacity','1');
         } else {
             $('#portfolio-img').css('opacity','0');

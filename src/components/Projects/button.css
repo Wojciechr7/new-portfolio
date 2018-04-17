@@ -4,6 +4,12 @@
   width: 50%;
   background-color: #353535;
 }
+
+@media(max-width: 500px) {
+  .animatedButton {
+    width: 70%;
+  }
+}
 .animatedButton:link, .animatedButton:visited {
   position: relative;
   display: block;

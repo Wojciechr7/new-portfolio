@@ -16,7 +16,7 @@
 
     }
     @media (max-width: 600px) {
-      font-size: 1em;
+      font-size: .8em;
     }
 
     p {
@@ -47,6 +47,14 @@
     color: gray;
     transition: all 1s;
     animation: bounce-arrow .5s alternate infinite;
+
+    @media (max-width: 1000px) {
+      font-size: 70px;
+
+    }
+    @media (max-width: 600px) {
+      font-size: 60px;
+    }
   }
 
   .arrow:hover {

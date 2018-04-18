@@ -17,7 +17,9 @@ export class Scroll {
         this.actualComponent = ac;
         this.locked = false;
         this.menu = new Menu(false);
-        this.t = $('#projects-container');
+        this.t = $('#projects-content');
+
+
         this.projectsCount = this.t.children().find('div').length/2;
 
         setTimeout(()=> {
@@ -45,8 +47,10 @@ export class Scroll {
             }
         };
 
-        if (this.actualComponent === 3) {
+        if (this.actualComponent === 1) {
             this.animations.animate(this.t.scrollTop());
+            console.log(this.t[0].clientHeight, this.t.scrollTop(), this.t[0].scrollHeight, $('#projects-container')[0].scrollHeight);
+
             if (!this.locked && this.t[0].clientHeight + this.t.scrollTop() === this.t[0].scrollHeight) {
                 scroll();
                 this.hideMenu();
@@ -75,10 +79,10 @@ export class Scroll {
                 });
             }
         };
-        if (this.actualComponent === 3 && this.t.scrollTop() === 0) {
+        if (this.actualComponent === 1 && this.t.scrollTop() === 0) {
             scroll();
             this.hideMenu();
-        } else if (this.actualComponent !== 3) {
+        } else if (this.actualComponent !== 1) {
             scroll();
             this.hideMenu();
         }

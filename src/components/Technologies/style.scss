@@ -28,6 +28,7 @@
 
       @media (max-width: 900px) {
         flex-flow: column;
+        overflow: auto;
       }
 
 
@@ -67,6 +68,7 @@
         }
         @media (max-width: 500px) {
           width: 100%;
+          font-size: 15px;
         }
       }
     }

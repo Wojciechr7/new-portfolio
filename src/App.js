@@ -4,6 +4,7 @@ import Welcome from './components/Welcome/Welcome';
 import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
+
 //import * as $ from 'jquery';
 
 
@@ -20,10 +21,13 @@ class App extends Component {
         return (
             <div className="App">
                 <Welcome scroll={this.getScroll}/>
-                <Menu ref={scr => { this.scr = scr }}/>
+                <Menu ref={scr => {
+                    this.scr = scr
+                }}/>
+                <Projects/>
                 <AboutMe/>
                 <Technologies/>
-                <Projects/>
+
             </div>
         );
     }
@@ -32,8 +36,8 @@ class App extends Component {
         window.addEventListener('wheel', this.handleScroll);
         this.scroll = this.scr.scroll;
 
-        /*setTimeout(() =>
-            this.scroll.scrollOnce());*/
+        setTimeout(() =>
+            this.scroll.scrollOnce());
     };
 
     componentWillUnmount() {
@@ -47,6 +51,7 @@ class App extends Component {
         } else {
             this.scroll.scrollUp();
         }
+
     };
 
     getScroll = () => {

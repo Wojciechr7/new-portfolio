@@ -13,7 +13,7 @@ class Projects extends Component {
         return (
             <section id='projects-container' className={styles.projectsContainer}>
                 <header className={styles.title}>PROJECTS</header>
-                <div className={styles.content}>
+                <div id='projects-content' className={styles.content}>
                     {MyProjects.getProjects().map(p =>
                         <div key={p.id.toString()}>
                             <div className={[bs["card"], bs["bg-light"]].join(' ')}>
@@ -34,6 +34,7 @@ class Projects extends Component {
                         </div>
                     )}
                 </div>
+
             </section>
         );
     }

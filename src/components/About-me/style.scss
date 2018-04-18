@@ -1,10 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import "../../settings";
 
 .aboutMeContainer {
+  @extend %full-size;
   display: flex;
-  height: 100vh;
   background-color: white;
   justify-content: center;
+
+  @media (max-width: $mobile) {
+    height: fit-content;
+    padding: 30px 0 50px 0;
+    flex-flow: column;
+  }
+
+  .title {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 2% auto;
+    font-family: $OSC;
+  }
 
   .contentBox {
     display: flex;
@@ -12,9 +25,10 @@
     width: 615px;
     align-self: flex-end;
 
-    @media (max-width: 550px) {
+    @media (max-width: $mobile) {
       width: 100%;
       align-self: flex-start;
+      margin: auto;
     }
 
 
@@ -23,7 +37,7 @@
       align-self: flex-end;
       transition: all 1s;
 
-      @media (max-width: 550px) {
+      @media (max-width: $mobile) {
         display: none;
       }
     }
@@ -34,19 +48,19 @@
       position: relative;
       align-self: flex-end;
       margin-bottom: 300px;
-      font-family: 'Open Sans Condensed', sans-serif;
+      font-family: $OSC;
       font-size: 30px;
       text-align: center;
       box-shadow: 10px 10px 13px -5px rgba(0,0,0,0.75);
 
-      @media (max-width: 1000px) {
+      @media (max-width: $tablet) {
         font-size: 25px;
       }
-      @media (max-width: 550px) {
+      @media (max-width: $mobile) {
         width: 98%;
         font-size: 20px;
         align-self: flex-start;
-        margin: 20px auto auto auto;
+        margin: 0 auto auto auto;
       }
     }
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styles from './style.scss';
 
 
+//TODO font 4-bit
 
 class Welcome extends Component {
 

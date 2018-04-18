@@ -47,9 +47,8 @@ export class Scroll {
             }
         };
 
-        if (this.actualComponent === 1) {
+        if (this.actualComponent === 3) {
             this.animations.animate(this.t.scrollTop());
-            console.log(this.t[0].clientHeight, this.t.scrollTop(), this.t[0].scrollHeight, $('#projects-container')[0].scrollHeight);
 
             if (!this.locked && this.t[0].clientHeight + this.t.scrollTop() === this.t[0].scrollHeight) {
                 scroll();
@@ -79,10 +78,10 @@ export class Scroll {
                 });
             }
         };
-        if (this.actualComponent === 1 && this.t.scrollTop() === 0) {
+        if (this.actualComponent === 3 && this.t.scrollTop() === 0) {
             scroll();
             this.hideMenu();
-        } else if (this.actualComponent !== 1) {
+        } else if (this.actualComponent !== 3) {
             scroll();
             this.hideMenu();
         }

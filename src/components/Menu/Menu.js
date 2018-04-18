@@ -3,8 +3,6 @@ import styles from './style.scss';
 import * as $ from 'jquery';
 import {ScrollTo} from "../../classes/ScrollTo";
 import {Scroll} from "../../classes/Scroll";
-//import {Scroll} from "../../classes/Scroll";
-
 
 
 

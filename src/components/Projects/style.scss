@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300');
+@import "../../settings";
 
 .projectsContainer {
-  height: 100vh;
-  font-family: 'Open Sans Condensed', sans-serif;
+  @extend %full-size;
+  font-family: $OSC;
   padding-bottom: 100px;
 
   @media (max-width: 750px) {
     margin-bottom: 0;
+    height: fit-content;
   }
   .title {
     text-align: center;
@@ -18,11 +19,13 @@
   .content {
     width: 100%;
     height: 100%;
-    visibility: hidden;
     overflow: scroll;
 
-    @media (max-width: 750px) {
-      visibility: visible;
+    @media (max-width: $mobile) {
+      display: flex;
+      flex-flow: column;
+      height: fit-content;
+      overflow: hidden;
     }
 
     &:not(*:root) {
@@ -31,7 +34,7 @@
     &::-webkit-scrollbar {
       visibility: hidden;
 
-      @media (max-width: 750px) {
+      @media (max-width: $mobile) {
         visibility: visible;
       }
     }
@@ -45,21 +48,22 @@
       box-shadow: 5px 5px 13px -5px rgba(0, 0, 0, 0.75);
       visibility: visible;
 
+      @media (max-width: $mobile) {
+          height: 400px;
+          flex-flow: column;
+          width: 98%;
+
+      }
+
       &:last-child {
         margin-bottom: 100px;
 
-        @media (max-width: 750px) {
+        @media (max-width: $mobile) {
           margin-bottom: 0;
         }
       }
 
-      @media (max-width: 750px) {
-        & {
-          height: 400px;
-          flex-flow: column;
-          width: 90%;
-        }
-      }
+
 
       > div {
         width: 50%;
@@ -80,12 +84,12 @@
               height: 75%;
             }
           }
-          @media (max-width: 900px) {
+          @media (max-width: $tablet) {
             & {
               height: 60%;
             }
           }
-          @media (max-width: 750px) {
+          @media (max-width: $mobile) {
             & {
               margin: auto;
               height: 90%;
@@ -94,7 +98,7 @@
 
         }
 
-        @media (max-width: 750px) {
+        @media (max-width: $mobile) {
           & {
             height: 25%;
             margin: auto;
@@ -112,7 +116,7 @@
         text-align: center;
         box-shadow: 6px 6px 13px -5px rgba(0, 0, 0, 0.75);
 
-        @media (max-width: 750px) {
+        @media (max-width: $mobile) {
           & {
             width: 90%;
             height: 65%;

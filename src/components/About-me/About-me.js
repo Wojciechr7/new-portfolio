@@ -13,6 +13,7 @@ class AboutMe extends Component {
     render() {
         return (
             <section className={styles.aboutMeContainer}>
+                <header className={[styles.title, bs["d-block"], bs["d-md-none"]].join(' ')}>HELLO</header>
                 <div className={styles.contentBox}>
                     <img id="portfolio-img" className={styles.portfolioImage} src={portfolio10} alt=""/>
                     <div className={[styles.content, bs["card"], bs["bg-light"]].join(' ')}>

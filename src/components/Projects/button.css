@@ -84,36 +84,9 @@
   transform: translateX(-50%) translateY(-50%) rotate(-25deg);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .animatedButton.victoriaTwo {
   border: 2px solid #D24D57;
+  margin: 5px auto;
 }
 .animatedButton.victoriaTwo:after {
   background: #D24D57;
@@ -122,6 +95,27 @@
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(25deg);
   transform: translateX(-50%) translateY(-50%) rotate(25deg);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .animatedButton.victoria-three {
   border: 2px solid #D24D57;
 }

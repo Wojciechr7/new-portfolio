@@ -18,7 +18,7 @@ class Technologies extends Component {
                 <div className={[styles.techDesc, bs["card"], bs["bg-light"]].join(' ')}>
                     <div className={bs["card-header"]}>Familiar technologies</div>
                     <div className={[bs["card-body"], styles.cardBody].join(' ')}>
-                        <div className={styles.imagesInterior}>
+                        <div id="skillset-images" className={styles.imagesInterior}>
                             <div className={styles.imageItem}>
                                 <img src={lin} alt=""/>
                                 <p>Linux</p>

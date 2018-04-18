@@ -1,6 +1,7 @@
 import * as $ from 'jquery';
 import {Menu} from "./Menu";
 import {ProjectsAnimation} from "./ProjectsAnimation";
+import {SkillsetAnimation} from "./SkillsetAnimation";
 
 export class Scroll {
 
@@ -11,6 +12,7 @@ export class Scroll {
     t;
     projectsCount;
     toggle;
+    skillAnimations;
 
     constructor(ac,tgl) {
         this.toggle = tgl;
@@ -23,7 +25,10 @@ export class Scroll {
         this.projectsCount = this.t.children().find('div').length/2;
 
         setTimeout(()=> {
-            this.animations = new ProjectsAnimation(this.t[0].scrollHeight, this.t[0].clientHeight, this.projectsCount)});
+            this.animations = new ProjectsAnimation(this.t[0].scrollHeight, this.t[0].clientHeight, this.projectsCount);
+            this.skillAnimations = new SkillsetAnimation()});
+
+
 
         this.togglePortfolioImage(this.actualComponent);
     }
@@ -40,6 +45,7 @@ export class Scroll {
                 }, 300, () => {
                     this.locked = false;
                     this.togglePortfolioImage(this.actualComponent);
+                    this.skillAnimations.toggle(this.actualComponent);
 
                     this.menu.toggleMenu(this.actualComponent);
 
@@ -75,6 +81,7 @@ export class Scroll {
                     this.locked = false;
 
                     this.togglePortfolioImage(this.actualComponent);
+                    this.skillAnimations.toggle(this.actualComponent);
                 });
             }
         };

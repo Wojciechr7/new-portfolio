@@ -1,0 +1,32 @@
+@import "../../settings";
+
+
+
+.contactContainer {
+  @extend %full-size;
+  font-family: $OSC;
+  display: flex;
+  flex-flow: column;
+  position: relative;
+
+  header {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 2% auto;
+  }
+
+}
+
+
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("./images/office.jpg");
+  background-size: cover;
+  opacity: .4;
+  z-index: -1;
+}

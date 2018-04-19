@@ -4,6 +4,7 @@ import Welcome from './components/Welcome/Welcome';
 import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
+import Contact from "./components/Contact/Contact";
 
 //import * as $ from 'jquery';
 
@@ -24,6 +25,7 @@ class App extends Component {
                 <Menu ref={scr => {
                     this.scr = scr
                 }}/>
+                <Contact/>
                 <AboutMe/>
                 <Technologies/>
                 <Projects/>
@@ -35,8 +37,8 @@ class App extends Component {
         window.addEventListener('wheel', this.handleScroll);
         this.scroll = this.scr.scroll;
 
-        /*setTimeout(() =>
-            this.scroll.scrollOnce());*/
+        setTimeout(() =>
+            this.scroll.scrollOnce());
     };
 
     componentWillUnmount() {

@@ -3,7 +3,7 @@
 .projectsContainer {
   @extend %full-size;
   font-family: $OSC;
-  padding-bottom: 100px;
+  //padding-bottom: 100px;
 
   @media (max-width: 750px) {
     margin-bottom: 0;
@@ -18,7 +18,7 @@
 
   .content {
     width: 100%;
-    height: 100%;
+    height: 90%;
     overflow: scroll;
 
     @media (max-width: $mobile) {

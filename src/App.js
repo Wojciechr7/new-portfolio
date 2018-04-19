@@ -25,10 +25,10 @@ class App extends Component {
                 <Menu ref={scr => {
                     this.scr = scr
                 }}/>
-                <Contact/>
                 <AboutMe/>
                 <Technologies/>
                 <Projects/>
+                <Contact/>
             </div>
         );
     }
@@ -37,8 +37,8 @@ class App extends Component {
         window.addEventListener('wheel', this.handleScroll);
         this.scroll = this.scr.scroll;
 
-        setTimeout(() =>
-            this.scroll.scrollOnce());
+        /*setTimeout(() =>
+            this.scroll.scrollOnce());*/
     };
 
     componentWillUnmount() {

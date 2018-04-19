@@ -8,6 +8,8 @@
   display: flex;
   flex-flow: column;
   position: relative;
+  top: -50px;
+
 
   header {
     font-size: 30px;
@@ -28,5 +30,4 @@
   background-image: url("./images/office.jpg");
   background-size: cover;
   opacity: .4;
-  z-index: -1;
 }

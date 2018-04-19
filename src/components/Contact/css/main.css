@@ -342,7 +342,7 @@ textarea.input100 {
 }
 
 .contact100-form-btn:hover {
-  background-color: #333333;
+  background-color: #333333 !important;
 }
 
 /*------------------------------------------------------------------

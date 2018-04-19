@@ -33,24 +33,23 @@ export default class Contact extends Component {
 					Drop Me A Message
 				</span>
 
-                        <div className={[cnt["wrap-input100"], cnt["rs1"], cnt["validate-input"]].join(' ')}
+                        <div className={[cnt["wrap-input100"], cnt["rs1"], cnt["validate-input"], cnt["alert-validate"]].join(' ')}
                              data-validate="Name is required">
-                            <input id="sender-name" className={cnt["input100"]} type="text" name="name"
+                            <input id="sender-name" className={[cnt["input100"], "input100"].join(' ')} type="text" name="name"
                                    placeholder="Name"/>
                             <span className={cnt["focus-input100"]}></span>
                         </div>
 
                         <div className={[cnt["wrap-input100"], cnt["rs1"], cnt["validate-input"]].join(' ')}
                              data-validate="Email is required: e@a.z">
-                            <input id="sender-mail" className={cnt["input100"]} type="text" name="email"
+                            <input id="sender-mail" className={[cnt["input100"], "input100"].join(' ')} type="text" name="email"
                                    placeholder="Email Address"/>
                             <span className={cnt["focus-input100"]}></span>
                         </div>
 
                         <div className={[cnt["wrap-input100"], cnt["validate-input"]].join(' ')}
                              data-validate="Message is required">
-                            <textarea id="sender-text" className={cnt["input100"]} name="message"
-                                      placeholder="Write Me A Message"></textarea>
+                            <textarea id="sender-text" className={[cnt["input100"], "input100"].join(' ')} name="message" placeholder="Write Me A Message"></textarea>
                             <span className={cnt["focus-input100"]}></span>
                         </div>
 

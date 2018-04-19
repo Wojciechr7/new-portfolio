@@ -313,6 +313,7 @@ textarea.input100 {
   flex-wrap: wrap;
   justify-content: flex-end;
   margin-top: -10px;
+  transition: all 1s;
 }
 
 .contact100-form-btn {

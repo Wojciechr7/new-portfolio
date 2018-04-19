@@ -6,6 +6,7 @@ import img from "./images/icons/symbol-01.png";
 import {Form} from "../../classes/Form";
 
 
+
 export default class Contact extends Component {
 
     formSender;
@@ -54,7 +55,7 @@ export default class Contact extends Component {
                         </div>
 
                         <div className={cnt["container-contact100-form-btn"]}>
-                            <button onClick={this.handleSend} className={cnt["contact100-form-btn"]}>
+                            <button id="form-button" onClick={this.handleSend} className={cnt["contact100-form-btn"]}>
                                 Send
                             </button>
                         </div>
@@ -69,14 +70,13 @@ export default class Contact extends Component {
     }
 
     handleSend = () => {
-        let data = {
+        let msg = {
             name: document.getElementById('sender-name').value,
-            mail: document.getElementById('sender-mail').value,
+            email: document.getElementById('sender-mail').value,
             text: document.getElementById('sender-text').value
         };
 
-
-        this.formSender.send(data);
+        this.formSender.send(msg);
     }
 
 

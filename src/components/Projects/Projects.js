@@ -6,18 +6,23 @@ import {MyProjects} from '../../classes/MyProjects';
 
 
 class Projects extends Component {
-    /*    constructor() {
-            super();
-        }*/
+
+    myProjects;
+    projects;
+
+    constructor() {
+        super();
+        this.myProjects = new MyProjects();
+
+    }
+
     render() {
         return (
             <section id='projects-container' className={styles.projectsContainer}>
                 <header className={styles.title}>PROJECTS</header>
                 <div id='projects-content' className={styles.content}>
-
-
-                    {MyProjects.getProjects().map(p => {
-                        return <div key={p.id.toString()}>
+                    {this.state && this.state.data ? this.state.data.map(p =>
+                        <div key={p.id.toString()}>
                             <div className={[bs["card"], bs["bg-light"]].join(' ')}>
                                 <img src={p.img} alt=""/>
                             </div>
@@ -37,7 +42,8 @@ class Projects extends Component {
                                 </div>
                             </article>
                         </div>
-                    })}
+                    ) : <div>loading</div>
+                    }
 
 
                 </div>
@@ -45,6 +51,11 @@ class Projects extends Component {
             </section>
         );
     }
+
+    componentDidMount() {
+        this.myProjects.getProjects(this);
+    }
+
 
 
 }

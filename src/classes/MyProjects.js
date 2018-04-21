@@ -1,14 +1,17 @@
-import checkers from '../img/devices/checkers-device.png';
-import school from '../img/devices/school-device.png';
-import tictactoe from '../img/devices/tictactoe-device.png';
-import gallows from '../img/devices/gallows-device.png';
-import esp from '../img/devices/esp.JPG';
+import axios from 'axios';
 
 export class MyProjects {
 
-    static getProjects() {
-        // TODO get from DB
-        return [
+
+    getProjects(self) {
+
+        axios.get(`http://localhost:3001/projects`)
+            .then(res => {
+                res.data.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
+                self.setState({ data: res.data })
+            });
+
+        /*return [
             {
                 id: 1,
                 name: "CHECKERS GAME",
@@ -54,7 +57,7 @@ export class MyProjects {
                 githubUrl: "https://github.com/Wojciechr7/ESP8266-RESTful-leds",
                 liveUrl: "#"
             }
-        ]
+        ]*/
     }
 
 

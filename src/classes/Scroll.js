@@ -98,7 +98,7 @@ export class Scroll {
 
     scrollOnce() {
         if (this.actualComponent < 4) {
-            ++this.actualComponent;
+            this.actualComponent = 3;
         }
         this.locked = true;
         $('html, body').stop().animate({

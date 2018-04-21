@@ -70,6 +70,7 @@ export default class Contact extends Component {
 
     handleSend = () => {
         let msg = {
+            date: new Date().toLocaleString('pl'),
             name: document.getElementById('sender-name').value,
             email: document.getElementById('sender-mail').value,
             text: document.getElementById('sender-text').value

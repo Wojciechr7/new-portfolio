@@ -165,6 +165,13 @@ iframe {
   -ms-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
 }
 
+@media (max-width: 800px) {
+  .wrapContact100 {
+    width: 98%;
+    margin-top: 50px;
+  }
+}
+
 
 .contact100-form-symbol {
   display: -webkit-box;
@@ -247,6 +254,21 @@ textarea.input100 {
   min-height: 199px;
   padding: 25px 20px 15px 25px;
   font-size: 15px;
+}
+@media (max-height: 870px) and (min-width: 768px) {
+  textarea.input100 {
+    min-height: 100px;
+  }
+  input.input100 {
+    height: 40px;
+  }
+  .contact100-form-title {
+    font-size: 25px;
+    line-height: 1;
+  }
+  .wrapContact100 {
+    padding: 52px 70px 40px 70px;
+  }
 }
 
 /*------------------------------------------------------------------

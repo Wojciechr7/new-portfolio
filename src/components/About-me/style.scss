@@ -32,7 +32,7 @@
     }
 
 
-    .portfolioImage {
+    a, .portfolioImage {
       object-fit: contain;
       align-self: flex-end;
       transition: all 1s;

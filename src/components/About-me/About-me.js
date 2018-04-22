@@ -15,7 +15,7 @@ class AboutMe extends Component {
             <section className={styles.aboutMeContainer}>
                 <header className={[styles.title, bs["d-block"], bs["d-md-none"]].join(' ')}>HELLO</header>
                 <div className={styles.contentBox}>
-                    <img id="portfolio-img" className={styles.portfolioImage} src={portfolio10} alt=""/>
+                    <a href="https://my-portfolio-cms.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img id="portfolio-img" className={styles.portfolioImage} src={portfolio10} alt=""/></a>
                     <div className={[styles.content, bs["card"], bs["bg-light"]].join(' ')}>
                         <div className={bs["card-header"]}>About me</div>
                         <div className={bs["card-body"]}>

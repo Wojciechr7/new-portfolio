@@ -52,7 +52,7 @@ export class Form {
             $('#form-button').css('background-color', 'green');
             $('#form-button').attr('disabled', true);
             $('textarea').val('');
-            axios.post(`http://localhost:3001/messages`, msg)
+            axios.post(`https://my-portfolio-cms.herokuapp.com/messages/`, msg)
                 .then(res => {
                     setTimeout(() => {
                         $('#form-button').text('Send');

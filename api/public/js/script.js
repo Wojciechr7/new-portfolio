@@ -1,8 +1,6 @@
+var url = "https://my-portfolio-cms.herokuapp.com";
+
 $(document).ready(function () {
-
-    switchInputs("messages");
-    reloadMessages();
-
 
 });
 
@@ -17,12 +15,13 @@ function addMsgBtn() {
         type: 'POST',
         data: JSON.stringify(data),
         contentType: 'application/json',
-        url: 'http://localhost:3001/messages',
+        url: url + '/messages/' + globalPas,
         success: function (data) {
             reloadMessages();
         }
     });
 }
+
 
 function addProjectBtn() {
 
@@ -33,7 +32,8 @@ function addProjectBtn() {
     var data = {};
     data.id = $('.p-id').val();
     data.name = $('.p-name').val();
-    data.img = window.location.href + "uploads/" + document.getElementById("file-input").files[0].name;
+    data.img = $('.p-img').val();
+    //data.img = window.location.href + "uploads/" + document.getElementById("file-input").files[0].name;
     data.description = $('.p-description').val();
     data.stack = $('.p-stack').val();
     data.githubUrl = $('.p-githubUrl').val();
@@ -42,7 +42,7 @@ function addProjectBtn() {
 
         $.ajax({
             type: "POST",
-            url: 'http://localhost:3001/projects',
+            url: url + '/projects/' + globalPas,
             data: JSON.stringify(data),
             contentType: 'application/json',
             error: function (data) {
@@ -50,7 +50,7 @@ function addProjectBtn() {
             },
             success: function (data) {
                 reloadProjects();
-                $.ajax({
+                /*$.ajax({
                     type: "POST",
                     url: $(form).prop("action"),
                     data: formData,
@@ -59,9 +59,8 @@ function addProjectBtn() {
                     error: function (data) {
                     },
                     success: function (data) {
-                        console.log('dziala');
                     }
-                });
+                });*/
             }
         });
 
@@ -77,7 +76,7 @@ function reloadMessages() {
         type: 'GET',
         data: JSON.stringify(data),
         contentType: 'application/json',
-        url: 'http://localhost:3001/messages',
+        url: url + '/messages/' + globalPas,
         success: function (data) {
             $('.content table').remove();
             $('.content').append(
@@ -98,12 +97,12 @@ function reloadProjects() {
         type: 'GET',
         data: JSON.stringify(data),
         contentType: 'application/json',
-        url: 'http://localhost:3001/projects',
+        url: url + '/projects/' + globalPas,
         success: function (data) {
             $('.content table').remove();
             $('.content').append(
                 '<table class="table table-striped table-bordered table-hover"><thead><th>id</th><th>name</th><th>image</th><th>description</th><th>stack</th><th>github url</th><th>live url</th><th>actions</th></thead></table>');
-            //data.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
+            data.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
             for (var p of data) {
                 $('.content table').append(
                     `<tr class="single-project">
@@ -132,7 +131,7 @@ function removeProject(id) {
         type: 'DELETE',
         data: JSON.stringify(data),
         contentType: 'application/json',
-        url: 'http://localhost:3001/projects/' + id,
+        url: url + '/projects/' + globalPas + "&" + id,
         success: function (data) {
             reloadProjects();
         }
@@ -154,7 +153,7 @@ function updateProject(id, el) {
         type: 'PUT',
         data: JSON.stringify(data),
         contentType: 'application/json',
-        url: 'http://localhost:3001/projects/' + id,
+        url: url + '/projects/' + globalPas + '&' + id,
         success: function (data) {
             reloadProjects();
         }
@@ -169,7 +168,7 @@ function removeMsg(id) {
         type: 'DELETE',
         data: JSON.stringify(data),
         contentType: 'application/json',
-        url: 'http://localhost:3001/messages/' + id,
+        url: url + '/messages/' + globalPas + '&' + id,
         success: function (data) {
             reloadMessages();
         }
@@ -188,7 +187,7 @@ function updateMsg(id, el) {
         type: 'PUT',
         data: JSON.stringify(data),
         contentType: 'application/json',
-        url: 'http://localhost:3001/messages/' + id,
+        url: url + '/messages/' + globalPas + "&" + id,
         success: function (data) {
             reloadMessages();
         }
@@ -214,11 +213,11 @@ function switchInputs(v) {
         <input name="name" class="p-name" placeholder="name">
         
         
-        <form id="uploadForm" enctype="multipart/form-data" action="/projects/img" method="post">
+        <!--<form id="uploadForm" enctype="multipart/form-data" action="/projects/img" method="post">
             <input id="file-input" type="file" name="project-image" />
-        </form>
+        </form>-->
         
-        
+        <input name="img" class="p-img" placeholder="img">
         <textarea name="description" class="p-description" placeholder="description"></textarea>
         <textarea name="stack" class="p-stack" placeholder="stack"></textarea>
         <input name="githubUrl" class="p-githubUrl" placeholder="githubUrl">

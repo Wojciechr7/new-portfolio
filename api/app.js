@@ -19,7 +19,7 @@ mongoose.connect('mongodb://Wojciechr7:zxasqw12@ds251179.mlab.com:51179/mymessag
   .catch((err) => console.error(err));
 
 
-var allowCrossDomain = function(req, res, next) {
+/*var allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
@@ -31,7 +31,7 @@ var allowCrossDomain = function(req, res, next) {
     else {
         next();
     }
-};
+};*/
 
 
 
@@ -39,7 +39,12 @@ var allowCrossDomain = function(req, res, next) {
 
 
 var app = express();
-app.use(allowCrossDomain);
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+//app.use(allowCrossDomain);
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

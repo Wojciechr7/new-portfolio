@@ -35,6 +35,7 @@ class App extends Component {
 
     componentDidMount() {
         window.addEventListener('wheel', this.handleScroll);
+        window.addEventListener('keydown', this.handleKey);
         this.scroll = this.scr.scroll;
 
         /*setTimeout(() =>
@@ -43,6 +44,7 @@ class App extends Component {
 
     componentWillUnmount() {
         window.removeEventListener('wheel', this.handleScroll);
+        window.removeEventListener('keydown', this.handleKey);
     };
 
 
@@ -52,7 +54,14 @@ class App extends Component {
         } else {
             this.scroll.scrollUp();
         }
+    };
 
+    handleKey = event => {
+        if (event.keyCode === 40) {
+            this.scroll.scrollDown();
+        } else if (event.keyCode === 38) {
+            this.scroll.scrollUp();
+        }
     };
 
     getScroll = () => {

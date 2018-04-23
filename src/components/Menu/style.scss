@@ -103,7 +103,7 @@ $radius: 15em;
   }
 }
 .c1 {
-  background: #292929;
+  background: #333333;
   transition-delay: 0.1s, 0.1s, 0.1s;
   transform: rotate((90deg/5) * 1);
   z-index: 2;
@@ -127,7 +127,7 @@ $radius: 15em;
 }
 .c3 {
   transition-delay: 0.3s,0.3s, 0.3s;
-  background: #555555;
+  background: #494949;
   transform: rotate((90deg/5) * 3);
   z-index: 4;
   .link::before {
@@ -138,7 +138,7 @@ $radius: 15em;
 }
 .c4 {
   transition-delay: 0.4s, 0.4s, 0.4s;
-  background: #6b6b6b;
+  background: #505050;
   transform: rotate((90deg/5) * 4);
   z-index: 5;
   .link::before {
@@ -148,7 +148,7 @@ $radius: 15em;
   }
 }
 .c5 {
-  background: #000000;
+  background: #222;
   z-index: 1;
 }
 * {

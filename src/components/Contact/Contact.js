@@ -20,7 +20,6 @@ export default class Contact extends Component {
     render() {
         return (
             <section className={styles.contactContainer}>
-                <div className={styles.background}></div>
                 <header>CONTACT</header>
                 <div className={cnt.wrapContact100}>
 			<span className={cnt["contact100-form-symbol"]}>

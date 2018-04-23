@@ -1,23 +1,37 @@
 @import "../../settings";
 
+@font-face {
+  font-family: "8-BIT WONDER";
+  src: url("./fonts/8-BIT WONDER.TTF") format("truetype")
+}
+
+section {
+  @extend %full-size;
+}
+
 .welcome {
   @extend %full-size;
-  background-color: black;
+  /*background-image: url("./office.jpg");
+  background-size: cover;*/
   color: white;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
+  z-index: 1;
+  font-family: "8-BIT WONDER";
 
   .welcomeMsg {
-    font-size: 3em;
+    font-size: 2em;
+    padding: 5%;
+    color: white;
 
     @media (max-width: $tablet) {
-      font-size: 2em;
+      font-size: 1em;
 
     }
     @media (max-width: $mobile) {
-      font-size: .8em;
+      font-size: .6em;
     }
 
     p {
@@ -44,7 +58,7 @@
     font-weight: bold;
     transform: rotate(90deg);
     cursor: pointer;
-    color: gray;
+    color: white;
     transition: all 1s;
     animation: bounce-arrow .5s alternate infinite;
 
@@ -58,7 +72,7 @@
   }
 
   .arrow:hover {
-    color: white;
+    color: gray;
   }
 }
 

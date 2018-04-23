@@ -157,6 +157,7 @@ iframe {
   position: relative;
   padding: 92px 70px 88px 70px;
   margin: auto;
+  z-index: 1;
 
   box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);

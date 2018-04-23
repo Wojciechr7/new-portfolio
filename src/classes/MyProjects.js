@@ -5,7 +5,7 @@ export class MyProjects {
 
     getProjects(self) {
 
-        axios.get(`https://my-portfolio-cms.herokuapp.com/projectss/`)
+        axios.get(`https://my-portfolio-cms.herokuapp.com/projects/`)
             .then(res => {
                 res.data.sort((a, b) => parseFloat(a.id) - parseFloat(b.id));
                 self.setState({ data: res.data })

@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import styles from './style.scss';
-
-
-//TODO font 4-bit
+import comp from './css/component.css';
+import * as $ from 'jquery';
 
 class Welcome extends Component {
 
@@ -13,6 +12,7 @@ class Welcome extends Component {
         this.scroll = props.scroll;
 
     }
+
     render() {
         return (
             <section id='welcome'>
@@ -21,6 +21,9 @@ class Welcome extends Component {
                         <p></p>
                     </div>
                     <div onClick={this.handleScroll} className={styles.arrow}>></div>
+                    <div id="large-header" className={comp["large-header"]}>
+                        <canvas id="demo-canvas"></canvas>
+                    </div>
                 </div>
             </section>
         );
@@ -29,6 +32,15 @@ class Welcome extends Component {
     handleScroll = () => {
         this.scroll().actualComponent = 0;
         this.scroll().scrollDown();
+    };
+
+    componentDidMount() {
+        $('body').append(`
+                        <script src="js/TweenLite.min.js"></script>
+                        <script src="js/EasePack.min.js"></script>
+                        <script src="js/rAF.js"></script>
+                        <script src="js/demo-1.js"></script>
+                        `);
     }
 
 }

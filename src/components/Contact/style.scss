@@ -19,6 +19,7 @@
     font-weight: bold;
     margin: 2% auto;
     color: black;
+    z-index: 1;
 
     @media (max-width: 800px) {
       margin-top: 50px;
@@ -29,6 +30,7 @@
 
 
 
+/*
 .background {
   position: absolute;
   top: 0;
@@ -38,4 +40,4 @@
   background-image: url("./images/office.jpg");
   background-size: cover;
   opacity: .4;
-}
+}*/

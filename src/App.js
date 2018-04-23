@@ -5,6 +5,7 @@ import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
 import Contact from "./components/Contact/Contact";
+import styles from './style.scss';
 
 //import * as $ from 'jquery';
 
@@ -29,6 +30,7 @@ class App extends Component {
                 <Technologies/>
                 <Projects/>
                 <Contact/>
+                <aside className={styles.background}></aside>
             </div>
         );
     }

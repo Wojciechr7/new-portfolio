@@ -23,8 +23,8 @@ class Projects extends Component {
                 <header className={styles.title}>PROJECTS</header>
                 <div id='projects-content' className={styles.content}>
                     {this.state && this.state.data ? this.state.data.map(p =>
-                            <div key={p.id.toString()}>
-                                <div className={[bs["card"], bs["bg-light"]].join(' ')}>
+                            <div key={p.id.toString()} className={styles.block}>
+                                <div className={[bs["card"], bs["bg-light"], styles.card].join(' ')}>
                                     <img src={p.img} alt=""/>
                                 </div>
                                 <article className={[bs["card"], bs["bg-dark"], bs["text-white"]].join(' ')}>

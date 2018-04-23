@@ -165,7 +165,7 @@ module.exports = {
                     // tags. If you use code splitting, however, any async bundles will still
                     // use the "style" loader inside the async code so CSS from them won't be
                     // in the main CSS file.
-                    {
+                    /*{
                         test: /\.css$/,
                         loader: ExtractTextPlugin.extract(
                             Object.assign(
@@ -212,8 +212,28 @@ module.exports = {
                             )
                         ),
                         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
-                    },
+                    },*/
+
                     {
+                        test: /\.s?css$/,
+                        use: ExtractTextPlugin.extract({
+                            fallback: 'style-loader',
+                            use: [
+                                {
+                                    loader: 'css-loader',
+                                    options: {
+                                        modules: true,
+                                        sourceMap: true,
+                                        importLoaders: 2,
+                                        localIdentName: '[name]__[local]___[hash:base64:5]'
+                                    }
+                                },
+                                'sass-loader'
+                            ]
+                        })
+                    },
+
+                    /*{
                         test: /\.scss$/,
                         loader: ExtractTextPlugin.extract(
                             Object.assign(
@@ -263,7 +283,12 @@ module.exports = {
                             )
                         ),
                         // Note: this won't work without `new ExtractTextPlugin()` in `plugins`.
-                    },
+                    },*/
+
+
+
+
+
                     // "file" loader makes sure assets end up in the `build` folder.
                     // When you `import` an asset, you get its filename.
                     // This loader doesn't use a "test" so it will catch all modules

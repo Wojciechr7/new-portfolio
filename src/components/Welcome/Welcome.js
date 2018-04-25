@@ -1,15 +1,18 @@
 import React, {Component} from 'react';
 import styles from './style.scss';
 import comp from './css/component.css';
-import * as $ from 'jquery';
+import {Particle} from "../../classes/Particle";
+
 
 class Welcome extends Component {
 
     scroll;
+    particles;
 
     constructor(props) {
         super(props);
         this.scroll = props.scroll;
+        this.particles = new Particle();
 
     }
 
@@ -35,12 +38,7 @@ class Welcome extends Component {
     };
 
     componentDidMount() {
-        $('body').append(`
-                        <script src="js/TweenLite.min.js"></script>
-                        <script src="js/EasePack.min.js"></script>
-                        <script src="js/rAF.js"></script>
-                        <script src="js/demo-1.js"></script>
-                        `);
+        this.particles.animate();
     }
 
 }

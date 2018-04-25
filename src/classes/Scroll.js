@@ -1,6 +1,5 @@
 import * as $ from 'jquery';
 import {Menu} from "./Menu";
-import {ProjectsAnimation} from "./ProjectsAnimation";
 import {SkillsetAnimation} from "./SkillsetAnimation";
 
 export class Scroll {
@@ -8,13 +7,12 @@ export class Scroll {
     actualComponent;
     locked;
     menu;
-    animations;
     t;
     projectsCount;
     toggle;
     skillAnimations;
 
-    constructor(ac,tgl) {
+    constructor(ac, tgl) {
         this.toggle = tgl;
         this.actualComponent = ac;
         this.locked = false;
@@ -22,13 +20,10 @@ export class Scroll {
         this.t = $('#projects-content');
 
 
-        this.projectsCount = this.t.children().find('div').length/2;
+        this.projectsCount = this.t.children().find('div').length / 2;
 
-        setTimeout(()=> {
-            this.animations = new ProjectsAnimation(this.t[0].scrollHeight, this.t[0].clientHeight, this.projectsCount);
-            this.skillAnimations = new SkillsetAnimation()});
-
-
+        setTimeout(() =>
+            this.skillAnimations = new SkillsetAnimation());
 
         this.togglePortfolioImage(this.actualComponent);
     }
@@ -47,15 +42,14 @@ export class Scroll {
                     this.togglePortfolioImage(this.actualComponent);
                     this.skillAnimations.toggle(this.actualComponent);
 
-                    this.menu.toggleMenu(this.actualComponent);
-
+                    if (window.innerWidth > 768) {
+                        this.menu.toggleMenu(this.actualComponent);
+                    }
                 });
             }
         };
 
         if (this.actualComponent === 3) {
-            this.animations.animate(this.t.scrollTop());
-
             if (!this.locked && this.t[0].clientHeight + this.t.scrollTop() === this.t[0].scrollHeight) {
                 scroll();
                 this.hideMenu();
@@ -98,7 +92,7 @@ export class Scroll {
 
     scrollOnce() {
         if (this.actualComponent < 4) {
-            this.actualComponent = 1;
+            this.actualComponent = 3;
         }
         this.locked = true;
         $('html, body').stop().animate({
@@ -115,9 +109,9 @@ export class Scroll {
 
     togglePortfolioImage(nr) {
         if (nr === 1) {
-            $('#portfolio-img').css('opacity','1');
+            $('#portfolio-img').css('opacity', '1');
         } else {
-            $('#portfolio-img').css('opacity','0');
+            $('#portfolio-img').css('opacity', '0');
         }
     }
 

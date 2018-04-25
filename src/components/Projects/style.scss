@@ -86,7 +86,7 @@
         z-index: 1;
 
         img {
-          margin: auto auto auto 3%;
+          margin: auto;
           transition: all .7s;
           height: 90%;
 
@@ -102,7 +102,6 @@
           }
           @media (max-width: $mobile) {
             & {
-              margin: auto;
               height: 90%;
             }
           }
@@ -149,15 +148,6 @@
           margin-bottom: 15px;
           z-index: 1;
         }
-      }
-    }
-    & > div:nth-child(5) div img {
-      width: 70%;
-      box-shadow: 5px 5px 13px -5px rgba(0, 0, 0, 0.75);
-      border-radius: 3px;
-
-      @media (max-width: $mobile) {
-        width: auto;
       }
     }
   }

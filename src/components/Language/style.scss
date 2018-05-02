@@ -3,6 +3,12 @@
   top: 5px;
   right: 10px;
   z-index: 1;
+
+  @media screen and (max-width: 992px) {
+    & {
+      display: none;
+    }
+  }
 }
 
 .container {

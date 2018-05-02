@@ -34,7 +34,7 @@ class App extends Component {
 
         return (
             <div className="App">
-                <Welcome scroll={this.state.scrollObject}/>
+                {window.innerWidth > 992 && <Welcome className={styles.welcome} scroll={this.state.scrollObject}/>}
                 <AboutMe/>
                 <Technologies/>
                 <Projects/>
@@ -50,8 +50,8 @@ class App extends Component {
         window.addEventListener('wheel', this.handleScroll);
         window.addEventListener('keydown', this.handleKey);
 
-        setTimeout(() =>
-            this.scroll.scrollOnce());
+        /*setTimeout(() =>
+            this.scroll.scrollOnce());*/
     };
 
     componentWillUnmount() {

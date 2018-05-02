@@ -17,9 +17,14 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("./img/blank-business-composition-373076.jpg");
+  background-image: url("./img/office.jpg");
   background-size: cover;
   //opacity: .4;
   z-index: -1;
 }
 
+
+.welcome {
+  display: none;
+
+}

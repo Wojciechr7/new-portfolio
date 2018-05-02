@@ -5,6 +5,7 @@
   font-family: $OSC;
   display: flex;
   flex-flow: column;
+  z-index: 1;
 
   @media (max-width: 900px) {
     height: fit-content;
@@ -14,7 +15,7 @@
     font-size: 30px;
     font-weight: bold;
     margin: 2% auto;
-    z-index: 1;
+
   }
 
 
@@ -26,7 +27,6 @@
     text-align: center;
     text-transform: uppercase;
     box-shadow: 8px 9px 13px -5px rgba(0,0,0,0.75);
-    z-index: 1;
 
     .cardBody {
       display: flex;

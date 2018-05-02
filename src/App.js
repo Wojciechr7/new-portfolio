@@ -6,30 +6,53 @@ import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
 import Contact from "./components/Contact/Contact";
 import styles from './style.scss';
-
-//import * as $ from 'jquery';
+import {Scroll} from "./classes/Scroll";
+import { translate } from "react-i18next";
+//import bs from 'bootstrap/scss/bootstrap.scss';
 
 
 class App extends Component {
 
     scroll;
 
-    /*constructor(props) {
+    constructor(props) {
         super(props);
 
-    }*/
+        this.scroll = new Scroll(0);
+
+        this.state = {
+            scrollObject: this.scroll
+        }
+
+    }
 
     render() {
+
+        const { i18n } = this.props;
+
+        const changeLanguage = lng => {
+            i18n.changeLanguage(lng);
+        };
+
+
         return (
             <div className="App">
-                <Welcome scroll={this.getScroll}/>
-                <Menu ref={scr => {
-                    this.scr = scr
-                }}/>
+                <Welcome scroll={this.state.scrollObject}/>
                 <AboutMe/>
+                <div className={styles.languageButtons}>
+                    <div className="container">
+                        <form onChange={(e) => changeLanguage(e.target.value)} className={[styles["switch"], styles["switch--vertical"]].join(' ')}>
+                            <input value="en" id="radio-c" type="radio" name="second-switch" defaultChecked/>
+                            <label htmlFor="radio-c">EN</label>
+                            <input value="pl" id="radio-d" type="radio" name="second-switch"/>
+                            <label htmlFor="radio-d">PL</label><span className={styles["toggle-outside"]}><span className={styles["toggle-inside"]}></span></span>
+                        </form>
+                    </div>
+                </div>
                 <Technologies/>
                 <Projects/>
                 <Contact/>
+                <Menu scroll={this.state}/>
                 <aside className={styles.background}></aside>
             </div>
         );
@@ -38,16 +61,16 @@ class App extends Component {
     componentDidMount() {
         window.addEventListener('wheel', this.handleScroll);
         window.addEventListener('keydown', this.handleKey);
-        this.scroll = this.scr.scroll;
 
-        /*setTimeout(() =>
-            this.scroll.scrollOnce());*/
+        setTimeout(() =>
+            this.scroll.scrollOnce());
     };
 
     componentWillUnmount() {
         window.removeEventListener('wheel', this.handleScroll);
         window.removeEventListener('keydown', this.handleKey);
     };
+
 
 
     handleScroll = event => {
@@ -58,6 +81,7 @@ class App extends Component {
         }
     };
 
+
     handleKey = event => {
         if (event.keyCode === 40) {
             this.scroll.scrollDown();
@@ -66,10 +90,13 @@ class App extends Component {
         }
     };
 
-    getScroll = () => {
-        return this.scroll;
+    changeLanguage = lng => {
+        this.i18n.changeLanguage(lng);
     };
 
 }
 
-export default App;
+
+
+export default translate("translations")(App);
+

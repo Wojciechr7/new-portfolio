@@ -1,13 +1,12 @@
 import React, {Component} from 'react';
 import styles from './style.scss';
-//import bs from 'bootstrap/scss/bootstrap.scss';
 import cnt from './css/main.css';
 import img from "./images/icons/symbol-01.png";
 import {Form} from "../../classes/Form";
+import { translate } from "react-i18next";
 
 
-
-export default class Contact extends Component {
+class Contact extends Component {
 
     formSender;
 
@@ -18,6 +17,7 @@ export default class Contact extends Component {
 
     // TODO reduce image weight
     render() {
+        const { t } = this.props;
         return (
             <section className={styles.contactContainer}>
                 <header>CONTACT</header>
@@ -29,26 +29,26 @@ export default class Contact extends Component {
                     <form
                         className={[cnt["contact100-form"], cnt["validate-form"], cnt["flex-sb"], cnt["flex-w"]].join(' ')}>
 				<span className={cnt["contact100-form-title"]}>
-					Drop Me A Message
+					{t("Drop Me A Message")}
 				</span>
 
                         <div className={[cnt["wrap-input100"], cnt["rs1"], cnt["validate-input"], cnt["alert-validate"]].join(' ')}
-                             data-validate="Name is required">
+                             data-validate={t("Name is required")}>
                             <input id="sender-name" className={[cnt["input100"], "input100"].join(' ')} type="text" name="name"
-                                   placeholder="Name"/>
+                                   placeholder={t("Name")}/>
                             <span className={cnt["focus-input100"]}></span>
                         </div>
 
                         <div className={[cnt["wrap-input100"], cnt["rs1"], cnt["validate-input"]].join(' ')}
-                             data-validate="Email is required: e@a.z">
+                             data-validate={t("Email is required")}>
                             <input id="sender-mail" className={[cnt["input100"], "input100"].join(' ')} type="text" name="email"
-                                   placeholder="Email Address"/>
+                                   placeholder={t("Email Address")}/>
                             <span className={cnt["focus-input100"]}></span>
                         </div>
 
                         <div className={[cnt["wrap-input100"], cnt["validate-input"]].join(' ')}
-                             data-validate="Message is required">
-                            <textarea id="sender-text" className={[cnt["input100"], "input100"].join(' ')} name="message" placeholder="Write Me A Message"></textarea>
+                             data-validate={t("Message is required")}>
+                            <textarea id="sender-text" className={[cnt["input100"], "input100"].join(' ')} name="message" placeholder={t("Write Me A Message")}></textarea>
                             <span className={cnt["focus-input100"]}></span>
                         </div>
 
@@ -81,3 +81,4 @@ export default class Contact extends Component {
 
 }
 
+export default translate("translations")(Contact);

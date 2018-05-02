@@ -5,6 +5,7 @@ import lin from '../../img/Linux-icon.png';
 import web from '../../img/ws.png';
 import win from '../../img/win.png';
 import bs from 'bootstrap/scss/bootstrap.scss';
+import { translate } from "react-i18next";
 
 
 class Technologies extends Component {
@@ -12,11 +13,12 @@ class Technologies extends Component {
             super();
         }*/
     render() {
+        const { t } = this.props;
         return (
             <section className={styles.technologiesContainer}>
                 <header className={styles.title}>SKILLSET</header>
                 <div className={[styles.techDesc, bs["card"], bs["bg-light"]].join(' ')}>
-                    <div className={bs["card-header"]}>Familiar technologies</div>
+                    <div className={bs["card-header"]}>{t("Familiar technologies")}</div>
                     <div className={[bs["card-body"], styles.cardBody].join(' ')}>
                         <div id="skillset-images" className={styles.imagesInterior}>
                             <div className={styles.imageItem}>
@@ -58,4 +60,4 @@ class Technologies extends Component {
 }
 
 
-export default Technologies;
+export default translate("translations")(Technologies);

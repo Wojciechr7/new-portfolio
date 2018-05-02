@@ -13,8 +13,6 @@
     flex-flow: column;
   }
 
-
-
   .title {
     font-size: 30px;
     font-weight: bold;
@@ -36,7 +34,6 @@
       margin: auto;
     }
 
-
     a, .portfolioImage {
       object-fit: contain;
       align-self: flex-end;
@@ -56,7 +53,7 @@
       font-family: $OSC;
       font-size: 30px;
       text-align: center;
-      box-shadow: 10px 10px 13px -5px rgba(0,0,0,0.75);
+      box-shadow: 10px 10px 13px -5px rgba(0, 0, 0, 0.75);
 
       @media (max-height: $mobile) {
         font-size: 25px;
@@ -74,4 +71,5 @@
 
     }
   }
+
 }

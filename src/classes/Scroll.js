@@ -8,22 +8,20 @@ export class Scroll {
     locked;
     menu;
     t;
-    projectsCount;
     toggle;
     skillAnimations;
 
-    constructor(ac, tgl) {
-        this.toggle = tgl;
+    constructor(ac) {
         this.actualComponent = ac;
         this.locked = false;
         this.menu = new Menu(false);
-        this.t = $('#projects-content');
 
+        setTimeout(() => {
+            this.skillAnimations = new SkillsetAnimation();
+            this.t = $('#projects-content');
+            this.toggle = $("#nav").attr('class').split(' ')[1];
+        });
 
-        this.projectsCount = this.t.children().find('div').length / 2;
-
-        setTimeout(() =>
-            this.skillAnimations = new SkillsetAnimation());
 
         this.togglePortfolioImage(this.actualComponent);
     }
@@ -52,11 +50,9 @@ export class Scroll {
         if (this.actualComponent === 3) {
             if (!this.locked && this.t[0].clientHeight + this.t.scrollTop() === this.t[0].scrollHeight) {
                 scroll();
-                this.hideMenu();
             }
         } else {
             scroll();
-            this.hideMenu();
         }
 
     }
@@ -81,10 +77,8 @@ export class Scroll {
         };
         if (this.actualComponent === 3 && this.t.scrollTop() === 0) {
             scroll();
-            this.hideMenu();
         } else if (this.actualComponent !== 3) {
             scroll();
-            this.hideMenu();
         }
 
 
@@ -92,7 +86,7 @@ export class Scroll {
 
     scrollOnce() {
         if (this.actualComponent < 4) {
-            this.actualComponent = 3;
+            this.actualComponent = 1;
         }
         this.locked = true;
         $('html, body').stop().animate({
@@ -102,10 +96,6 @@ export class Scroll {
             this.menu.toggleMenu(this.actualComponent);
         });
     }
-
-    hideMenu() {
-        $("#nav").addClass(this.toggle);
-    };
 
     togglePortfolioImage(nr) {
         if (nr === 1) {

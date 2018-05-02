@@ -33,8 +33,8 @@ class Welcome extends Component {
     }
 
     handleScroll = () => {
-        this.scroll().actualComponent = 0;
-        this.scroll().scrollDown();
+        this.scroll.actualComponent = 0;
+        this.scroll.scrollDown();
     };
 
     componentDidMount() {

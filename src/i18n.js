@@ -1,40 +1,11 @@
 import i18n from "i18next";
-//import LanguageDetector from "i18next-browser-languagedetector";
+import {i18nTechnologies} from './components/Technologies/i18n';
+import {i18nAboutMe} from './components/About-me/i18n';
+import {i18nContact} from './components/Contact/i18n';
 
 i18n.init({
     // we init with resources
-    resources: {
-        en: {
-            translations: {
-                "About me": "About me",
-                "About me hello": "Hello, my name is Robert, ",
-                "About me description": "I'm studying informatics at University of Warmia and Mazury in Olsztyn. I'm generally interested in programming and everything similar like microcontrolers.",
-                "Familiar technologies": "Familiar technologies",
-                "Drop Me A Message": "Drop Me A Message",
-                "Name": "Name",
-                "Email Address": "Email Address",
-                "Write Me A Message": "Write Me A Message",
-                "Name is required": "Name is required",
-                "Email is required": "Email is required: e@a.z",
-                "Message is required": "Message is required"
-            }
-        },
-        pl: {
-            translations: {
-                "About me": "O mnie",
-                "About me hello": "Witam, nazywam się Robert, ",
-                "About me description": "Studiuję informatykę na Uniwersytecie Warmińsko-Mazurskim w Olsztynie. Interesuję się programowaniem i pokrewnymi dziedzinami np. mikrokontrolery.",
-                "Familiar technologies": "Ulubione technologie",
-                "Drop Me A Message": "Napisz Wiadomość",
-                "Name": "Imię",
-                "Email Address": "Adres Email",
-                "Write Me A Message": "Twoja Wiadomość",
-                "Name is required": "Pole imię jest wymagane",
-                "Email is required": "Pole email jest wymagane: e@a.z",
-                "Message is required": "Wpisz wiadomość"
-            }
-        }
-    },
+    resources: mergeDeep(i18nTechnologies, i18nAboutMe, i18nContact),
     fallbackLng: "en",
     debug: true,
 
@@ -55,3 +26,28 @@ i18n.init({
 });
 
 export default i18n;
+
+
+
+function mergeDeep(...objects) {
+    const isObject = obj => obj && typeof obj === 'object';
+
+    return objects.reduce((prev, obj) => {
+        Object.keys(obj).forEach(key => {
+            const pVal = prev[key];
+            const oVal = obj[key];
+
+            if (Array.isArray(pVal) && Array.isArray(oVal)) {
+                prev[key] = pVal.concat(...oVal);
+            }
+            else if (isObject(pVal) && isObject(oVal)) {
+                prev[key] = mergeDeep(pVal, oVal);
+            }
+            else {
+                prev[key] = oVal;
+            }
+        });
+
+        return prev;
+    }, {});
+}

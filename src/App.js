@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 import Menu from './components/Menu/Menu';
 import Welcome from './components/Welcome/Welcome';
+import Language from './components/Language/Language';
 import AboutMe from "./components/About-me/About-me";
 import Projects from "./components/Projects/Projects";
 import Technologies from "./components/Technologies/Technologies";
 import Contact from "./components/Contact/Contact";
 import styles from './style.scss';
 import {Scroll} from "./classes/Scroll";
-import { translate } from "react-i18next";
+
 //import bs from 'bootstrap/scss/bootstrap.scss';
 
 
@@ -28,30 +29,17 @@ class App extends Component {
 
     render() {
 
-        const { i18n } = this.props;
 
-        const changeLanguage = lng => {
-            i18n.changeLanguage(lng);
-        };
 
 
         return (
             <div className="App">
                 <Welcome scroll={this.state.scrollObject}/>
                 <AboutMe/>
-                <div className={styles.languageButtons}>
-                    <div className="container">
-                        <form onChange={(e) => changeLanguage(e.target.value)} className={[styles["switch"], styles["switch--vertical"]].join(' ')}>
-                            <input value="en" id="radio-c" type="radio" name="second-switch" defaultChecked/>
-                            <label htmlFor="radio-c">EN</label>
-                            <input value="pl" id="radio-d" type="radio" name="second-switch"/>
-                            <label htmlFor="radio-d">PL</label><span className={styles["toggle-outside"]}><span className={styles["toggle-inside"]}></span></span>
-                        </form>
-                    </div>
-                </div>
                 <Technologies/>
                 <Projects/>
                 <Contact/>
+                <Language/>
                 <Menu scroll={this.state}/>
                 <aside className={styles.background}></aside>
             </div>
@@ -98,5 +86,5 @@ class App extends Component {
 
 
 
-export default translate("translations")(App);
+export default App;
 

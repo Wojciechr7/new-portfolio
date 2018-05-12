@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import styles from './style.scss';
-import bs from 'bootstrap/scss/bootstrap.scss';
+//import bs from 'bootstrap/scss/bootstrap.scss';
 import { translate } from "react-i18next";
 
 

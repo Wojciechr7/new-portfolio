@@ -8,6 +8,7 @@ import Technologies from "./components/Technologies/Technologies";
 import Contact from "./components/Contact/Contact";
 import styles from './style.scss';
 import {Scroll} from "./classes/Scroll";
+//import * as $ from 'jquery';
 
 //import bs from 'bootstrap/scss/bootstrap.scss';
 
@@ -41,6 +42,7 @@ class App extends Component {
                 <Contact/>
                 <Language/>
                 <Menu scroll={this.state}/>
+                <a href="https://my-portfolio-cms.herokuapp.com/" target="_blank" rel="noopener noreferrer" className={styles.cmsButton}><p></p></a>
                 <aside className={styles.background}></aside>
             </div>
         );
@@ -78,9 +80,9 @@ class App extends Component {
         }
     };
 
-    changeLanguage = lng => {
+    /*changeLanguage = lng => {
         this.i18n.changeLanguage(lng);
-    };
+    };*/
 
 }
 

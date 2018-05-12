@@ -25,7 +25,7 @@
     display: flex;
     position: relative;
     width: 615px;
-    align-self: flex-end;
+    //align-self: flex-end;
     z-index: 1;
 
     @media (max-width: $mobile) {
@@ -46,10 +46,10 @@
 
     .content {
       width: 60%;
-      height: 50%;
+      //height: 50%;
       position: relative;
       align-self: flex-end;
-      margin-bottom: 300px;
+      margin: auto;
       font-family: $OSC;
       font-size: 30px;
       text-align: center;

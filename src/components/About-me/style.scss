@@ -3,27 +3,36 @@
 .aboutMeContainer {
   @extend %full-size;
   display: flex;
-  justify-content: center;
   position: relative;
   z-index: 0;
+  flex-flow: column;
 
   @media (max-width: $mobile) {
     height: fit-content;
-    padding: 30px 0 50px 0;
     flex-flow: column;
   }
 
   .title {
     font-size: 30px;
     font-weight: bold;
-    margin: 2% auto;
     font-family: $OSC;
     z-index: 1;
+    text-shadow: 0 0 10px black;
+    color: white;
+    display: flex;
+    height: 100px;
+    width: 100%;
+
+    p {
+      margin: auto;
+    }
   }
+
 
   .contentBox {
     display: flex;
     position: relative;
+    margin: 0 auto;
     width: 615px;
     //align-self: flex-end;
     z-index: 1;

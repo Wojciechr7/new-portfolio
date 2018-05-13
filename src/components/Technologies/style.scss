@@ -14,10 +14,17 @@
   .title {
     font-size: 30px;
     font-weight: bold;
-    margin: 2% auto;
+    text-shadow: 0 0 10px black;
+    display: flex;
+    color: white;
+    height: 100px;
+
+    p {
+      margin: auto;
+
+    }
 
   }
-
 
   .techDesc {
     width: 800px;
@@ -26,7 +33,7 @@
     margin: 0 auto auto auto;
     text-align: center;
     text-transform: uppercase;
-    box-shadow: 8px 9px 13px -5px rgba(0,0,0,0.75);
+    box-shadow: 8px 9px 13px -5px rgba(0, 0, 0, 0.75);
 
     .cardBody {
       display: flex;
@@ -34,7 +41,6 @@
       @media (max-width: $tablet) {
         flex-flow: column;
       }
-
 
       .imagesInterior {
         display: flex;
@@ -64,7 +70,6 @@
             width: 80px;
             height: 80px;
             filter: grayscale(1);
-
 
             @media (max-height: $mobile) {
               width: 60px;

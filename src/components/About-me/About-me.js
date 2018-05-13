@@ -17,7 +17,7 @@ class AboutMe extends Component {
         const { t } = this.props;
         return (
             <section className={styles.aboutMeContainer}>
-                <header className={[styles.title, bs["d-block"], bs["d-md-none"]].join(' ')}>HELLO</header>
+                <header className={styles.title}><p>HELLO</p></header>
                 <div className={styles.contentBox}>
                     {/*<a href="https://my-portfolio-cms.herokuapp.com/" target="_blank" rel="noopener noreferrer"><img id="portfolio-img" className={styles.portfolioImage} src={portfolio10} alt=""/></a>*/}
                     <div className={[styles.content, bs["card"], bs["bg-light"]].join(' ')}>

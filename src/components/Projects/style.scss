@@ -11,11 +11,18 @@
     height: fit-content;
   }
   .title {
-    text-align: center;
     font-size: 30px;
     font-weight: bold;
-    margin-top: 5vh;
     z-index: 1;
+    color: white;
+    text-shadow: 0 0 10px black;
+    height: 100px;
+    display: flex;
+
+    p {
+      margin: auto;
+    }
+
   }
 
   .content {

@@ -16,7 +16,7 @@ class Technologies extends Component {
         const { t } = this.props;
         return (
             <section className={styles.technologiesContainer}>
-                <header className={styles.title}>SKILLSET</header>
+                <header className={styles.title}><p>SKILLSET</p></header>
                 <div className={[styles.techDesc, bs["card"], bs["bg-light"]].join(' ')}>
                     <div className={bs["card-header"]}>{t("Familiar technologies")}</div>
                     <div className={[bs["card-body"], styles.cardBody].join(' ')}>

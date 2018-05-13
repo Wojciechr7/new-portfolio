@@ -3,7 +3,7 @@ export const i18nAboutMe = {
         translations: {
             "About me": "About me",
             "About me hello": "Hello, my name is Robert. ",
-            "About me description": "I'm studying informatics at University of Warmia and Mazury in Olsztyn. I'm generally interested in programming and everything similar like microcontrolers."
+            "About me description": "I'm on IT studies at University of Warmia and Mazury in Olsztyn. I'm generally interested in programming and everything similar, for example microcontrolers."
         }
     },
     pl: {

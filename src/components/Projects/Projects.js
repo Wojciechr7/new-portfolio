@@ -20,7 +20,7 @@ class Projects extends Component {
     render() {
         return (
             <section id='projects-container' className={styles.projectsContainer}>
-                <header className={styles.title}>PROJECTS</header>
+                <header className={styles.title}><p>PROJECTS</p></header>
                 <div id='projects-content' className={styles.content}>
                     {this.state && this.state.data ? this.state.data.map(p =>
                             <div key={p.id.toString()} className={styles.block}>
